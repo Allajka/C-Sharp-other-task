@@ -1,22 +1,33 @@
-﻿// 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
+﻿// 14. Найти третью цифру числа или сообщить, что её нет
 
-double userNumberA = 2;
-double userNumberB = 7;
-double result = userNumberA / userNumberB;
-double result2 = userNumberA % userNumberB;
-Console.WriteLine(result + " " + result2);
+int checkNumber(int numbers)
+{
+    int amountNumber = 0;
+    while (numbers > 0)
+    {
+        numbers /= 10;
+        amountNumber++;
+    }
+    return amountNumber;
+}
 
-double x = 10;
-double y = 3;
-double z;
-z = x / y - y;
-Console.WriteLine(z);
+int number = new Random().Next(1, 10000);
+int sumNumber = checkNumber(number);
+int control = sumNumber - 3;
+int i = 0;
 
-// if (result == userNumberA)
-// {
-//     Console.Write($"Число {userNumberA} кратно {userNumberB}");
-// }
-// else
-// {
-//     Console.Write($"Остаток от деления {userNumberA} и {userNumberB} = {result}");
-// }
+if (sumNumber >= 3)
+{
+    while (i < control)
+    {
+        number = number / 10;
+        i++;
+    }
+    int thirdNumber = number % 10;
+    Console.WriteLine($"Третья цифра {number} числа {thirdNumber}");
+}
+
+if (sumNumber < 3)
+{
+    Console.WriteLine("Нет третьей цифры в числе {number} ");
+}

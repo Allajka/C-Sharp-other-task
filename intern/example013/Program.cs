@@ -1,8 +1,14 @@
-﻿// 12. Удалить вторую цифру трёхзначного числа
+﻿// 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
 
-int number = new Random().Next(100, 1000) ;
-int firstNumber = number / 100;
-int secondNumber = (number / 10) % 10;
-int thirdNumber = number % 10;
-int result = firstNumber * 10 + thirdNumber;
-Console.Write($"Удаление второго числа {number} -> {result}"); 
+double userNumberA = 28;
+double userNumberB = 3;
+double result = userNumberA % userNumberB;
+
+if (result == userNumberA)
+{
+    Console.Write($"Число {userNumberA} кратно {userNumberB}.");
+}
+else
+{
+    Console.Write($"Число {userNumberA} не кратно {userNumberB}. Остаток от деления {result}.");
+}

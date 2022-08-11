@@ -1,6 +1,6 @@
-﻿// 9. Показать последнюю цифру трёхзначного числа
+﻿// 10. Показать вторую цифру трёхзначного числа
 
 int number = new Random().Next(100, 1000);
-int mod  = number % 10;
+int result = (number / 10) % 10;
 
-Console.WriteLine($"Последнее число {mod} числа {number}");
+Console.WriteLine($"Вторая цифра {result} трехзначного числа {number}");

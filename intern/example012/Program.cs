@@ -1,10 +1,8 @@
-﻿// 11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
+﻿// 12. Удалить вторую цифру трёхзначного числа
 
-int number = new Random().Next(10, 100);
-int firstNumber = number / 10;
-int lastNumber = number % 10;
-int maxNumber = firstNumber;
-
-if (lastNumber>maxNumber) maxNumber = lastNumber;
-
-Console.Write($"Максимальная цифра {maxNumber} из числа {number}");
+int number = new Random().Next(100, 1000);
+int firstNumber = number / 100;
+int secondNumber = (number / 10) % 10;
+int thirdNumber = number % 10;
+int result = firstNumber * 10 + thirdNumber;
+Console.Write($"Удаление второго числа {number} -> {result}"); 

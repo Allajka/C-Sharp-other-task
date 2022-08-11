@@ -1,15 +1,14 @@
-﻿//  2. Даны два числа. Показать большее и меньшее число
+﻿//  3. По заданному номеру дня недели вывести его название
 
-int first = new Random().Next(0, 10);
-int second = new Random().Next(0, 10);
+string[] weekDays = new string[] { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+Console.Write("Введите порядковый номер дня недели: ");
+int userDay = Convert.ToInt32(Console.ReadLine());
 
-if (first > second)
+
+while (userDay <= 0 || userDay > 7)
 {
-    Console.WriteLine($"{first} большее число");
-    Console.WriteLine($"{second} меньшее число");
+    Console.Write("Не верный ввод. Введите порядковый номер дня недели от 1 до 7: ");
+    userDay = Convert.ToInt32(Console.ReadLine());
 }
-else
-{
-    Console.WriteLine($"{second} большее число");
-    Console.WriteLine($"{first} меньшее число");
-}
+
+Console.WriteLine(weekDays[userDay-1]);

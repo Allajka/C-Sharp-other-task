@@ -1,11 +1,5 @@
-﻿//  4. Найти максимальное из трех чисел
+﻿//  5. Написать программу вычисления значения функции y = f(a)
 
-int firstNumber = new Random().Next(0, 100);
-int secondNumber = new Random().Next(0, 100);;
-int thirdNumber = new Random().Next(0, 100);;
-int maxNumber = firstNumber;
-
-if (secondNumber>maxNumber) maxNumber=secondNumber;
-if (thirdNumber>maxNumber) maxNumber=thirdNumber;
-
-Console.WriteLine($"Max = {maxNumber} из цифр {firstNumber}, {secondNumber}, {thirdNumber}");
+Console.Write("Найдем значение y = f(a).\nВведите значение a = ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write($"y = {a}");

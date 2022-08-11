@@ -1,5 +1,6 @@
-﻿//  5. Написать программу вычисления значения функции y = f(a)
+﻿// 6. Выяснить является ли число чётным
 
-Console.Write("Найдем значение y = f(a).\nВведите значение a = ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.Write($"y = {a}");
+int number = new Random().Next(1, 10);
+
+if (number % 2 == 0) Console.WriteLine($"Число {number} четное");
+else Console.WriteLine($"Число {number} не четное");

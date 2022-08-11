@@ -1,17 +1,15 @@
-﻿// 1. По двум заданным числам проверять является ли первое квадратом второго
+﻿//  2. Даны два числа. Показать большее и меньшее число
 
-Console.WriteLine("Проверка является ли первое число квадратом второго.");
-Console.Write("Введите первое число: ");
-int userNumber = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число: ");
-int userNumber2 = Convert.ToInt32(Console.ReadLine());
+int first = new Random().Next(0, 10);
+int second = new Random().Next(0, 10);
 
-if ( userNumber2 == userNumber*userNumber)
+if (first > second)
 {
-    Console.Write($"{userNumber} является квадратом {userNumber2}");
+    Console.WriteLine($"{first} большее число");
+    Console.WriteLine($"{second} меньшее число");
 }
 else
 {
-    Console.Write($"{userNumber} НЕ является квадратом {userNumber2}");
+    Console.WriteLine($"{second} большее число");
+    Console.WriteLine($"{first} меньшее число");
 }
-

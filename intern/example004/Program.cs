@@ -1,14 +1,11 @@
-﻿//  3. По заданному номеру дня недели вывести его название
+﻿//  4. Найти максимальное из трех чисел
 
-string[] weekDays = new string[] { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
-Console.Write("Введите порядковый номер дня недели: ");
-int userDay = Convert.ToInt32(Console.ReadLine());
+int firstNumber = new Random().Next(0, 100);
+int secondNumber = new Random().Next(0, 100);;
+int thirdNumber = new Random().Next(0, 100);;
+int maxNumber = firstNumber;
 
+if (secondNumber>maxNumber) maxNumber=secondNumber;
+if (thirdNumber>maxNumber) maxNumber=thirdNumber;
 
-while (userDay <= 0 || userDay > 7)
-{
-    Console.Write("Не верный ввод. Введите порядковый номер дня недели от 1 до 7: ");
-    userDay = Convert.ToInt32(Console.ReadLine());
-}
-
-Console.WriteLine(weekDays[userDay-1]);
+Console.WriteLine($"Max = {maxNumber} из цифр {firstNumber}, {secondNumber}, {thirdNumber}");

@@ -1,50 +1,32 @@
-﻿// 7. Показать числа от -N до N
+﻿//  8. Показать четные числа от 1 до N
 
-// Console.Write("Введите число: ");
-// int userNumber = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число: "); 
+// int number = Convert.ToInt32(Console.ReadLine());
 // string result = "";
-// int index = - userNumber;
 
-// while (index <= 0)
+// for (int i = 2; i <= number ; i= i+2)
 // {
-//     result = result + index + " ";
-//     index++;
+//     result = result + i + " ";
 // }
 
-// index = 0;
+// Console.Write("Четные числа: " + result);
 
-// while (index < userNumber)
-// {
-//     index++;
-//     result = result + index + " ";
-// }
-
-// Console.Write(result);
-
-// 7. Показать числа от -N до N
 Console.Write("Введите число: ");
-int N = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[N * 2 + 1];
+int number = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[number];
 int index = 0;
+int check = 2;
 
-while (index <= N)
+while (check <= number)
 {
-    array[index] = -N + index;
-    index++;
-}
-
-while (index <= N*2)
-{
-    array[index] = index-N;
+    array[index] = check;
+    check = check + 2;
     index++;
 }
 
 index = 0;
-while (index < (N * 2 + 1))
+while (index < number)
 {
     Console.Write(array[index] + " ");
     index++;
 }
-
-
-
