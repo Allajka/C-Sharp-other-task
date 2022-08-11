@@ -1,8 +1,10 @@
 ﻿// 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
 
-double userNumberA = 1;
-double userNumberB = 0;
-double result = userNumberA % userNumberB;
+Console.Write("Введите первое число: "); 
+double userNumberA = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите первое число: "); 
+double userNumberB = Convert.ToDouble(Console.ReadLine());
+double result = userNumberB % userNumberA;
 
 if (userNumberA == 0 || userNumberB == 0) 
 {
@@ -10,12 +12,12 @@ if (userNumberA == 0 || userNumberB == 0)
 }
 else 
 {
-if (result == 0 || result == userNumberA)
-{
-    Console.Write($"Число {userNumberA} кратно {userNumberB}.");
-}
-else
-{
-    Console.Write($"Число {userNumberA} не кратно {userNumberB}. Остаток от деления {result}.");
+    if (result == 0 )
+    {
+        Console.Write($"Число {userNumberA} кратно {userNumberB}.");
+    }
+    else
+    {
+        Console.Write($"Число {userNumberA} не кратно {userNumberB}. Остаток от деления {result}.");
 }
 }

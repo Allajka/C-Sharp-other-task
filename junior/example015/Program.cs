@@ -8,5 +8,5 @@ if (number % 7 == 0 && number % 23 == 0)
 }
 else
 {
-    Console.WriteLine($"Число {number} НЕ кратно одновременно 7 и 23.");
+    Console.WriteLine($"Число {number} НЕ кратно 7 и 23.");
 }
