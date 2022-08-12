@@ -13,7 +13,7 @@
 
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[number];
+int[] array = new int[(number/2)];
 int index = 0;
 int check = 2;
 
@@ -25,7 +25,7 @@ while (check <= number)
 }
 
 index = 0;
-while (index < number)
+while (index < (number/2))
 {
     Console.Write(array[index] + " ");
     index++;

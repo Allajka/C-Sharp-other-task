@@ -9,3 +9,6 @@
 4. дизъюнкция
 таблица истинности https://docs.google.com/spreadsheets/d/1vQ0Gy5gDhY32hfoco-0FfpUCNPDnX-z1_F-cgEQasPc/edit?usp=sharing
 */
+
+int X = 0;
+int Y = 0;
