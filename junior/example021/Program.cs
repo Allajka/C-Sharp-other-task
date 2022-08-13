@@ -1,6 +1,6 @@
 ﻿// 21. Программа проверяет пятизначное число на палиндромом.
 
-Console.Write("Введите число пятизначное число:  ");
+Console.Write("Введите пятизначное число:  ");
 int userDay = Convert.ToInt32(Console.ReadLine());
 string lineNumber = Convert.ToString(userDay);
 
