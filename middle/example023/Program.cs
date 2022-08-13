@@ -8,7 +8,7 @@ int square = 0;
 while (index <= N)
 {
     square = index * index;
-    Console.Write(" " + square);
+    Console.Write($"{square,-6}"); // 6 кол-во отступов можно (- минус) прижимаем к другому краю
     index++;
     if (index % 10 == 0 )
     {

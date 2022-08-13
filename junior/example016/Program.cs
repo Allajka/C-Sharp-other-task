@@ -7,7 +7,7 @@ string[] weekDays = new string[] { "Monday", "Tuesday", "Wednesday ", "Thursday"
 while (userDay > 7 || userDay <= 0) 
 {
     Console.Write("Введите порядковый номер дня недели от 1 до 7:  ");
-    serDay = Convert.ToInt32(Console.ReadLine());
+    userDay = Convert.ToInt32(Console.ReadLine());
 }
 
 if (userDay == 6 || userDay == 7) Console.WriteLine($"{weekDays[userDay-1]} выходной"); 
@@ -28,4 +28,7 @@ else Console.WriteLine($"{weekDays[userDay-1]} будний день");
 // else
 // {
 //     Console.WriteLine("Некорректный ввод числа");
-// }  
+// }
+  
+
+
