@@ -1,20 +1,13 @@
 ﻿// 28. Подсчитать сумму цифр в числе
 
 Console.Write("Введите число: ");
-string? number = Console.ReadLine();
-char[] arr = number.ToCharArray();
+int number = Convert.ToInt32(Console.ReadLine());
+int box = number;
+int sum = 0;
+while (box > 0)
+{ 
+sum += box % 10;
+box = box /10 ;
+}
 
-int a = Convert.ToInt32(arr[0]);
-int b = Convert.ToInt32(arr[1]);
-
-Console.WriteLine(a+b);
-
-// int result = Convert.ToInt32(arr[0]);
-// Console.WriteLine(result);
-
-// for (int i = 0; i<arr.Length; i++)
-// {
-//     result += Convert.ToInt32(arr[i]);
-// }
-
-// Console.WriteLine(result);
+Console.WriteLine($"Сумма цифр в числе {number} = {sum}");
