@@ -77,15 +77,50 @@ _Частотный анализ – это один из методов кри�
 8 встречается 1 раз
 9 встречается 3 раза*/
 
-int[] numbers = { 1, 9, 9, 0, 1, 2, 8, 0, 9, 1 };
-string newNumber = "";
-
 void printArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
     }
+}
+
+int metod1 (int [] numbers, int C)
+{
+    int counter = 0;
+    int control = C;
+    for (int j = 0; j <= numbers.Length-1; j++)
+    {
+        if (control == numbers[j]) counter += 1;
+    }
+    return counter;
+}
+
+int[] sortArray (int[] array)
+{
+    int [] newNumbers = array;
+    for (int i = 0; i < newNumbers.Length-1; i++)
+    {
+       int minPos = i;
+       for (int j = i+1; j < newNumbers.Length; j++)
+       {
+           if(newNumbers[j]< newNumbers[minPos]) minPos = j;
+       }
+       int temporary = newNumbers[i];
+       newNumbers[i] = newNumbers [minPos];
+       newNumbers [minPos] = temporary;
+    }   
+    return newNumbers;
+}
+
+
+int [] numbers = { 1, 9, 9, 0, 2, 8, 0, 9 };
+string newNumber = string.Empty;;
+
+for (int i = 0; i < numbers.Length; i++)
+{
+    int a = metod1(numbers, numbers[i]);
+    System.Console.WriteLine($"Число {numbers[i]} встречается {a} раз");
 }
 
 // while (index <= numbers.Length)  // index = 1
@@ -107,43 +142,20 @@ void printArray(int[] array)
 // }
 
 
-for (int i = 0; i < numbers.Length; i++)
-{
-    int index = 0;
-    while (index <= newNumber.Length) 
-    {
-        if (numbers[index] == newNumber[i]) 
-        {
-            index++;
-        }
-        else
-        {
-            newNumber += numbers[index]; 
-            Console.WriteLine(newNumber);
-            index++;
-        }
-    }
-}
-
-
-// printArray(numbers);
-// Console.WriteLine(newNumber);
-
-// int metod1 (int [] numbers, int C)
-// {
-//     int counter = 0;
-//     int control = C;
-//     for (int j = 0; j <= numbers.Length-1; j++)
-//     {
-//         if (control == numbers[j]) counter += 1;
-//     }
-//     return counter;
-// }
-
 // for (int i = 0; i < numbers.Length; i++)
 // {
-//     int a = metod1(numbers, numbers[i]);
-//     System.Console.WriteLine($"Число {numbers[i]} встречается {a} раз");
+//     int index = 0;
+//     while (index <= newNumber.Length) 
+//     {
+//         if (numbers[index] == newNumber[i]) 
+//         {
+//             index++;
+//         }
+//         else
+//         {
+//             newNumber += numbers[index]; 
+//             Console.WriteLine(newNumber);
+//             index++;
+//         }
+//     }
 // }
-
-
