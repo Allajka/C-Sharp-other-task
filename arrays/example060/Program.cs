@@ -13,15 +13,14 @@
 1, 2, 3
 4, 6, 1
 2, 1, 6
-```
-на выходе ожидаем получить
-```
+
+на выходе ожидаем получить:
 1 встречается 3 раза
 2 встречается 2 раз
 3 встречается 1 раз
 4 встречается 1 раз
 6 встречается 2 раза
-```
+
 Пример частотного массива для текстовых данных:
 Входные данные:
 
@@ -29,8 +28,7 @@ _Частотный анализ – это один из методов кри�
 отдельных символов и их последовательностей как в открытом тексте, так и шифрованном тексте, которое с точностью до замены символов будет сохраняться 
 в процессе шифрования и дешифрования._
 
-Частотный анализ может выглядеть так
-```
+Частотный анализ может выглядеть так:
 Символ пробел/space встречается 41 раз. Частота 12.28%
 Символ о встречается 38 раз.  Частота 11.38%
 Символ и встречается 26 раз.  Частота 7.78%
@@ -69,80 +67,19 @@ _Частотный анализ – это один из методов кри�
 ```
 [url](https://abakbot.ru/online-5/97-freq-letter "источник")*/
 
-/*Есть набор данных: { 1, 9, 9, 0, 2, 8, 0, 9 }
-частотный массив может быть представлен так:
-0 встречается 2 раза
-1 встречается 1 раз
-2 встречается 1 раз
-8 встречается 1 раз
-9 встречается 3 раза*/
-
-void printArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-}
-
-int metod1(int[] numbers, int C)
-{
-    int counter = 0;
-    int control = C;
-    for (int j = 0; j <= numbers.Length - 1; j++)
-    {
-        if (control == numbers[j]) counter += 1;
-    }
-    return counter;
-}
-
-int[] sortArray(int[] array)
-{
-    int[] newNumbers = array;
-    for (int i = 0; i < newNumbers.Length - 1; i++)
-    {
-        int minPos = i;
-        for (int j = i + 1; j < newNumbers.Length; j++)
-        {
-            if (newNumbers[j] < newNumbers[minPos]) minPos = j;
-        }
-        int temporary = newNumbers[i];
-        newNumbers[i] = newNumbers[minPos];
-        newNumbers[minPos] = temporary;
-    }
-    return newNumbers;
-}
-
-bool isContains (int [] numbers, int current, int currentIndex) 
-{
-    for (int i = 0; i < currentIndex; i++)
-    {
-        if (numbers[i] == current)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-
-int[] numbers = { 1, 9, 9, 0, 2, 8, 0, 9 };
-sortArray(numbers);
+var text = 	new Dictionary<int, int>();
+int [] numbers = { 1, 1, 2, 2};
 
 for (int i = 0; i < numbers.Length; i++)
 {
-    int current = numbers[i]; 
-    int count = 0;
-    for (int j = i; j < numbers.Length; j++)
+    if (text.ContainsKey(numbers[i]))
     {
-        if (isContains(numbers, current, i)) 
-        {
-            break;
-        }
-        if (current == numbers[j])
-        {
-            count++;
-        }
+        text[numbers[i]] += 1;
     }
-    if (count != 0) System.Console.WriteLine($"Число {current} встречается {count} раз");
+    else text.Add(numbers[i], 1);
+}
+
+foreach(var i in numbers)
+{
+    Console.WriteLine($"key: {i}  value: {numbers}");
 }
