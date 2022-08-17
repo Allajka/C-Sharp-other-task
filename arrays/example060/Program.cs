@@ -85,77 +85,64 @@ void printArray(int[] array)
     }
 }
 
-int metod1 (int [] numbers, int C)
+int metod1(int[] numbers, int C)
 {
     int counter = 0;
     int control = C;
-    for (int j = 0; j <= numbers.Length-1; j++)
+    for (int j = 0; j <= numbers.Length - 1; j++)
     {
         if (control == numbers[j]) counter += 1;
     }
     return counter;
 }
 
-int[] sortArray (int[] array)
+int[] sortArray(int[] array)
 {
-    int [] newNumbers = array;
-    for (int i = 0; i < newNumbers.Length-1; i++)
+    int[] newNumbers = array;
+    for (int i = 0; i < newNumbers.Length - 1; i++)
     {
-       int minPos = i;
-       for (int j = i+1; j < newNumbers.Length; j++)
-       {
-           if(newNumbers[j]< newNumbers[minPos]) minPos = j;
-       }
-       int temporary = newNumbers[i];
-       newNumbers[i] = newNumbers [minPos];
-       newNumbers [minPos] = temporary;
-    }   
+        int minPos = i;
+        for (int j = i + 1; j < newNumbers.Length; j++)
+        {
+            if (newNumbers[j] < newNumbers[minPos]) minPos = j;
+        }
+        int temporary = newNumbers[i];
+        newNumbers[i] = newNumbers[minPos];
+        newNumbers[minPos] = temporary;
+    }
     return newNumbers;
 }
 
+bool isContains (int [] numbers, int current, int currentIndex) 
+{
+    for (int i = 0; i < currentIndex; i++)
+    {
+        if (numbers[i] == current)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
-int [] numbers = { 1, 9, 9, 0, 2, 8, 0, 9 };
-string newNumber = string.Empty;;
+
+int[] numbers = { 1, 9, 9, 0, 2, 8, 0, 9 };
+sortArray(numbers);
 
 for (int i = 0; i < numbers.Length; i++)
 {
-    int a = metod1(numbers, numbers[i]);
-    System.Console.WriteLine($"Число {numbers[i]} встречается {a} раз");
+    int current = numbers[i]; 
+    int count = 0;
+    for (int j = i; j < numbers.Length; j++)
+    {
+        if (isContains(numbers, current, i)) 
+        {
+            break;
+        }
+        if (current == numbers[j])
+        {
+            count++;
+        }
+    }
+    if (count != 0) System.Console.WriteLine($"Число {current} встречается {count} раз");
 }
-
-// while (index <= numbers.Length)  // index = 1
-// {
-//     int i = 0;
-//     while (i <= newNumber.Length) // i = 0
-//     {
-//         if (numbers[index] == newNumber[i]) // 9 == " " no
-//         {
-//             i++;
-//         }
-//         else
-//         {
-//             newNumber += numbers[index];  // 
-//             i++;
-//         }
-//     }
-//     index++;
-// }
-
-
-// for (int i = 0; i < numbers.Length; i++)
-// {
-//     int index = 0;
-//     while (index <= newNumber.Length) 
-//     {
-//         if (numbers[index] == newNumber[i]) 
-//         {
-//             index++;
-//         }
-//         else
-//         {
-//             newNumber += numbers[index]; 
-//             Console.WriteLine(newNumber);
-//             index++;
-//         }
-//     }
-// }
