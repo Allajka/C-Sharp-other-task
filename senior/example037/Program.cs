@@ -15,22 +15,22 @@ void printArray(int[] arr)
     Console.WriteLine("Массив: ");
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i], 3} ");
-        if(i>0)
+        Console.Write($"{arr[i],3} ");
+        if (i > 0)
         {
-            if (i % 20 == 0 ) System.Console.WriteLine();
+            if (i % 20 == 0) System.Console.WriteLine();
         }
     }
 
     System.Console.WriteLine();
 }
 
-int searchNumber (int[] numbers, int segmentStart, int segmentFinish)
+int searchNumber(int[] numbers, int segmentStart, int segmentFinish)
 {
     int counter = 0;
     for (int i = 0; i <= numbers.Length - 1; i++)
     {
-        if (numbers [i] >= segmentStart && numbers [i] <= segmentFinish) counter += 1;
+        if (numbers[i] >= segmentStart && numbers[i] <= segmentFinish) counter += 1;
     }
     return counter;
 }
