@@ -66,20 +66,39 @@ _Частотный анализ – это один из методов кри�
 Символ . встречается 1 раз.   Частота 0.30%
 ```
 [url](https://abakbot.ru/online-5/97-freq-letter "источник")*/
+// цифры
+// Dictionary<int, int> number = new Dictionary<int, int>();
+// int [] numbers = { 1, 1, 2, 2, 7, 8, 9, 12 ,12 ,13 ,58, 58};
 
-var text = 	new Dictionary<int, int>();
-int [] numbers = { 1, 1, 2, 2};
+// for (int i = 0; i < numbers.Length; i++)
+// {
+//     if (number.ContainsKey(numbers[i]))
+//     {
+//         number[numbers[i]] += 1;
+//     }
+//     else number.Add(numbers[i], 1);
+// }
 
-for (int i = 0; i < numbers.Length; i++)
+// foreach (var e in number)
+// Console.WriteLine("Цифра - {0} встречается {1} раз", e.Key, e.Value); 
+
+// текст
+
+Dictionary<char, int> checkText = new Dictionary<char, int>();
+string text = "_Частотный анализ – это один из методов криптоанализа, основывающийся на предположении о существовании"
++ "нетривиального статистического распределения отдельных символов и их последовательностей как в открытом тексте, так"
++ "и шифрованном тексте, которое с точностью до замены символов будет сохраняться в процессе шифрования и дешифрования._";
+
+for (int i = 0; i < text.Length; i++)
 {
-    if (text.ContainsKey(numbers[i]))
+    if (checkText.ContainsKey(text[i]))
     {
-        text[numbers[i]] += 1;
+        checkText[text[i]] += 1;
     }
-    else text.Add(numbers[i], 1);
+    else checkText.Add(text[i], 1);
 }
 
-foreach(var i in numbers)
+foreach (var e in checkText)
 {
-    Console.WriteLine($"key: {i}  value: {numbers}");
+    Console.WriteLine("Символ - {0} встречается {1} раз. Частота ", e.Key, e.Value); 
 }
