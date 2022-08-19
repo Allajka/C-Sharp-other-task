@@ -1,7 +1,19 @@
 ﻿// 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным 
 
 Console.Write("Введите порядковый номер дня недели:  ");
-int userDay = Convert.ToInt32(Console.ReadLine());
+string Day = Console.ReadLine()!;
+
+int userDay = 20;
+while(true)
+{
+    Console.Write("Введите порядковый номер дня недели числом:  ");
+    Day = Console.ReadLine()!;
+    bool flag = int.TryParse(Day, out userDay); /*принимает на вход 
+какую-то строку и пытается превратить эту сроку в тот тип, что ему 
+указали. и передает true false*/
+    if (flag && userDay >= 1 && userDay <= 7) break; 
+}
+
 string[] weekDays = new string[] { "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday ", "Saturday", "Sunday" };
 
 while (userDay > 7 || userDay <= 0) 
