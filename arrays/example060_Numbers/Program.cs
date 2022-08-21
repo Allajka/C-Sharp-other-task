@@ -34,7 +34,7 @@ int[] sortArray(int[] array)
     return newNumbers;
 }
 
-int [] numbers = { 1, 9, 9, 0, 2, 8, 0, 9 };
+int [] numbers = { 1, 9, 9, 0, 2, 8, 0, 9, 3, 7, 5 , 5 , 5};
 sortArray(numbers);
 
 for (int i = 0; i < numbers.Length; i++)
@@ -52,5 +52,6 @@ for (int i = 0; i < numbers.Length; i++)
             count++;
         }
     }
-    if (count != 0) System.Console.WriteLine($"Число {current} встречается {count} раз");
+    double frequency = count*100/numbers.Length;
+    if (count != 0) System.Console.WriteLine ($"Число {current} встречается {count} раз. Частотность {frequency}%.");
 }

@@ -1,5 +1,5 @@
 ﻿// 34. Написать программу замену элементов массива на противоположные
-void printArray(int[] arr)
+void printArrayNumber(int[] arr)
 {
     Console.Write("Массив: ");
     for (int i = 0; i < arr.Length; i++)
@@ -8,7 +8,7 @@ void printArray(int[] arr)
     }
 }
 
-void printArray2(string[] arr)
+void printArrayletters(string[] arr)
 {
     Console.Write("Массив: ");
     for (int i = 0; i < arr.Length; i++)
@@ -37,5 +37,5 @@ for (int i = 0; i < letters.Length / 2; i++)
     letters[letters.Length - 1 - i] = temporary;
 }
 
-printArray(numbers);
-printArray2(letters);
+printArrayNumber(numbers);
+printArrayletters(letters);
