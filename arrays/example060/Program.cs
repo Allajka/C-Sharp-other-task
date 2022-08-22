@@ -101,7 +101,7 @@ for (int i = 0; i < text.Length; i++)
 foreach (var e in checkText)
 {
     // Console.WriteLine("Символ {0} встречается {1} раз. Частота {2}%. ", e.Key, e.Value, Math.Round((e.Value * 100 / text.Length),2));
-    Console.WriteLine("Символ {0} встречается {1} раз. Частота {2}%. ", e.Key, e.Value, string.Format("{0,00}", Math.Round((e.Value * 100 / text.Length), 2)));
+    Console.WriteLine("Символ {0} встречается {1} раз. Частота {2}%. ", e.Key, e.Value, string.Format("{0:f2}", Math.Round((e.Value * 100 / text.Length), 2)));
 }
 
 

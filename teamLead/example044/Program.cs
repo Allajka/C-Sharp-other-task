@@ -4,10 +4,10 @@ y = k2 * x + b2,
 
 b1 k1 и b2 и k2 заданы */
 
-double k1 = 0;
-double b1 = -1;
-double k2 = 2;
-double b2 = 1;
+double k1 = 5;
+double b1 = 2;
+double k2 = 9;
+double b2 = 4;
 
 if (k1 == k2 || k1 == 0 || k2 == 0)
 {
