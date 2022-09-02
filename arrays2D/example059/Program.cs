@@ -1,11 +1,18 @@
-﻿// 59. В прямоугольной матрице найти строку с наименьшей суммой элементов.
+﻿/* 59.  Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+5 2 6 7
 
-int[,] CreateArray(int row, int col)
+Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка */
+
+int[,] CreateArrayRandomNumbers(int row, int col)
 {
     int[,] numbers = new int[row, col];
     for (int i = 0; i < numbers.GetLength(0); i++)
     {
-        for (int j = 0; j < numbers.GetLength(0); j++)
+        for (int j = 0; j < numbers.GetLength(1); j++)
         {
             numbers[i, j] = new Random().Next(0, 10);
         }
@@ -23,9 +30,6 @@ void PrintArray(int[,] arr)
         System.Console.WriteLine();
     }
 }
-int[,] numbers = CreateArray(row: 5, col: 8);
-PrintArray(numbers);
-
 int SumRow(int[,] arr, int row)
 {
     int sum = 0;
@@ -35,14 +39,26 @@ int SumRow(int[,] arr, int row)
     }
     return sum;
 }
-
-for (int i = 0; i < 1; i++)
+void ItemRow(int[,] arr)
 {
-    int minSumRow = SumRow(numbers, row: i);
-    for (int j = 1; j < numbers.GetLength(0); j++)
+    for (int i = 0; i < 1; i++)
     {
-        int sumRow = SumRow(numbers, row: j);
-        if (sumRow < Convert.ToInt32(minSumRow)) minSumRow = sumRow;
+        int minSumRow = SumRow(arr, row: i);
+        int itemRow = i;
+        for (int j = 1; j < arr.GetLength(0); j++)
+        {
+            int sumRow = SumRow(arr, row: j);
+            if (sumRow < Convert.ToInt32(minSumRow))
+            {
+                minSumRow = sumRow;
+                itemRow = j;
+            }
+        }
+        Console.WriteLine($"Номер строки - {itemRow + 1} с наименьшей суммой элементов - {minSumRow}.");
     }
-    Console.WriteLine($"minSumRow: {minSumRow}");
 }
+
+int[,] numbers = CreateArrayRandomNumbers(row: 5, col: 8);
+PrintArray(numbers);
+Console.WriteLine();
+ItemRow(numbers);
