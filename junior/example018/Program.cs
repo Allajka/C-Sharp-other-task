@@ -10,22 +10,16 @@
 таблица истинности https://docs.google.com/spreadsheets/d/1vQ0Gy5gDhY32hfoco-0FfpUCNPDnX-z1_F-cgEQasPc/edit?usp=sharing
 */
 
-bool X1 = true; 
+bool X1 = true;
 bool Y1 = true;
-bool X2 = false; 
+bool X2 = false;
 bool Y2 = false;
-bool result1 = !(X1 || Y1);
-bool result2 = !(X1 || Y2);
-bool result3 = !(X2 || Y1);
-bool result4 = !(X2 || Y2);
 
-bool result11 = !X1 && !Y1;
-bool result22 = !X1 && !Y2;
-bool result33 = !X2 && !Y1;
-bool result44 = !X2 && !Y2;
-
-if (result1 == result11 && result2 == result22 && result3 == result33 && result4 == result44) 
+if (!(X1 || Y1) == (!X1 && !Y1)
+  && !(X1 || Y2) == (!X1 && !Y2)
+  && !(X2 || Y1) == (!X2 && !Y1)
+  && !(X2 || Y2) == (!X2 && !Y2))
 {
-    Console.Write ($"Утверждение истинно");
+    Console.Write($"Утверждение истинно");
 }
-else Console.Write ($"Утверждение ложное");
+else Console.Write($"Утверждение ложное");

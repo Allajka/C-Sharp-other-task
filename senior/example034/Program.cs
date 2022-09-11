@@ -1,41 +1,21 @@
 ﻿// 34. Написать программу замену элементов массива на противоположные
-void printArrayNumber(int[] arr)
+void Reversal<T>(T[] arr)
 {
-    Console.Write("Массив: ");
-    for (int i = 0; i < arr.Length; i++)
+    T box;
+    for (int i = 0; i < arr.Length / 2; i++)
     {
-        Console.Write(arr[i] + " ");
+        box = arr[i];
+        arr[i] = arr[arr.Length - 1 - i];
+        arr[arr.Length - 1 - i] = box;
     }
 }
 
-void printArrayletters(string[] arr)
-{
-    Console.Write("Массив: ");
-    for (int i = 0; i < arr.Length; i++)
-    {
-        Console.Write(arr[i] + " ");
-    }
-}
-
-int[] numbers = { 2, 6, 8, 5, 7, 5, 3 };
+int[] numbers = { 2, 6, 8, 5, 7, 5, 3, 5 };
 string[] letters = { "в", "а", "п", "ц", "с", "у" };
 
-int box = 0;
-
-for (int i = 0; i < numbers.Length / 2; i++)
-{
-    box = numbers[i];
-    numbers[i] = numbers[numbers.Length - 1 - i];
-    numbers[numbers.Length - 1 - i] = box;
-}
-
-string temporary = string.Empty;;
-for (int i = 0; i < letters.Length / 2; i++)
-{
-    temporary = letters[i];
-    letters[i] = letters[letters.Length - 1 - i];
-    letters[letters.Length - 1 - i] = temporary;
-}
-
-printArrayNumber(numbers);
-printArrayletters(letters);
+Console.WriteLine("[{0}]", string.Join(", ", numbers));
+Reversal(numbers);
+Console.WriteLine("[{0}]", string.Join(", ", numbers));
+Console.WriteLine("[{0}]", string.Join(", ", letters));
+Reversal(letters);
+Console.WriteLine("[{0}]", string.Join(", ", letters));
