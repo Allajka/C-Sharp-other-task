@@ -46,11 +46,14 @@ int SumHeadDiagonal(int[,] arr)
                 result += arr[j, j] + arr[j, arr.GetLength(1) - 1 - j];
             }
         }
-        result -= arr[arr.GetLength(1) - 1 - (arr.GetLength(1) / 2), arr.GetLength(1) - 1 - (arr.GetLength(1) / 2)];
     }
     return result;
 }
 
 int[,] numbers = CreateArray(5, 5);
-PrintArray(numbers);
-System.Console.WriteLine($"Сумма элементов главной диагонали = {SumHeadDiagonal(numbers)}.");
+if (numbers.GetLength(0) == numbers.GetLength(1))
+{
+    PrintArray(numbers);
+    System.Console.WriteLine($"Сумма элементов главной диагонали = {SumHeadDiagonal(numbers)}.");
+}
+else System.Console.WriteLine($"Сумма элементов главной диагонали можно найти только в квадратной матрице");

@@ -1,20 +1,21 @@
 ﻿// 43. Написать программу преобразования десятичного числа в двоичное
 
-void binaryTransfer(int number)
+long binaryTransfer(long number)
 {
-    decimal binaryNumber = number % 2;
-    int ten = 10;
+    long binaryNumber = number % 2;
+    long ten = 10;
 
     while (number > 0)
     {
+        System.Console.WriteLine($"binaryNumber {binaryNumber} += ((number{number} / 2) % 2) * ten{ten};");
         binaryNumber += ((number / 2) % 2) * ten;
         number /= 2;
         ten *= 10;
-        System.Console.WriteLine($"binaryNumber {binaryNumber}, number {number}");
     }
-    System.Console.WriteLine($"Число {number} в двоичной системе счисления: {binaryNumber}");
+    return binaryNumber;
 }
 
 Console.Write("Введите десятичное число для перевода его в двоичную систему счисления: ");
-int number = Convert.ToInt32(Console.ReadLine());
-binaryTransfer(number);
+long number = Convert.ToInt32(Console.ReadLine());
+long binaryNumber = binaryTransfer(number);
+System.Console.WriteLine($"Число {number} в двоичной системе счисления: {binaryNumber}");
